@@ -1,0 +1,43 @@
+;; shadow-cljs configuration
+{:deps
+ {:aliases [:cljs]}
+
+ :dev-http
+ {8020 "resources/public"}
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "resources/public/js"
+   :asset-path "resource/public"
+   :build-options
+   {:ns-aliases
+    {day8.re-frame.tracing day8.re-frame.tracing-stubs}}
+   :compiler-options {:output-feature-set :es-next
+                      :infer-externs :auto}
+   :modules
+   {:main
+    {:init-fn sports.new-app/init}}}
+  :dev
+  {:target :browser
+   :closure-defines {}
+   :output-dir "resources/public/js"
+   :asset-path "resources/public"
+   :js-options {:resolve {"highlight.js" {:target :npm :require "highlight.js/lib/core"}}}
+   :modules
+   {:main
+    {:init-fn howard.learning-japanese.core/init}}
+   :compiler-options
+   {:infer-externs false
+    :closure-defines
+    {re-frame.trace.trace-enabled? true
+     day8.re-frame-10x.debug? true
+     day8.re-frame.tracing.trace-enabled? true}}
+   :devtools
+   {:preloads [day8.re-frame-10x.preload]}}
+
+  :test
+  {:target    :node-test
+   :output-to "out/node-tests.js"
+   :autorun   true
+   :compiler-options {:infer-externs "auto"
+                      :warnings {:infer-warning false}}}}}

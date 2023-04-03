@@ -1,0 +1,22 @@
+{
+  "name": "learn-japanese",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn shadow:watch",
+    "shadow:watch": "shadow-cljs watch dev",
+    "shadow:release": "shadow-cljs release app"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.22.9"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@mui/material": "5.11.8",
+    "highlight.js": "11.1.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  }
+}
