@@ -3,9 +3,7 @@
    [reagent-mui.components :refer [container card card-content card-actions typography button grid box]]
    [reagent-mui.icons.circle-notifications :refer [circle-notifications]]
    [re-frame.core :as re-frame]
-   [howard.learning-japanese.events :as events])
-  (:require-macros
-   [cljss.core :refer [inject-global]]))
+   [howard.learning-japanese.events :as events]))
 
 (re-frame/reg-sub
  ::card-answer-field
