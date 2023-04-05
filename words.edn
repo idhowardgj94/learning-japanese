@@ -1,0 +1,12 @@
+[{:word  "合う"
+  :sentence  "この靴、私に会うと思いますか。"
+  :chinese "合適、符合"}
+ {:word  "会う"
+  :sentence  "今週の土曜日、友達と会う約束をしました。"
+  :chinese "見面、碰面、遇見"}
+ {:word  "遭う"
+  :sentence  "気をつけないと、事故に遭うよ。"
+  :chinese "逼遇（災害等）"}
+ {:word  "上がる"
+  :sentence  "事務所は階段を上がって右です。"
+  :chinese "上、上升"}]
