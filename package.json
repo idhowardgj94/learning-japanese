@@ -1,12 +1,15 @@
 {
   "name": "learn-japanese",
   "version": "1.0.0",
+  "homepage": "https:/idhowardgj94.github.io/learning-japanese",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "yarn shadow:watch",
     "shadow:watch": "shadow-cljs watch dev",
-    "shadow:release": "shadow-cljs release app"
+    "shadow:release": "shadow-cljs release app",
+    "predeploy": "yarn shadow:release",
+    "deploy": "gh-pages -d resources/public"
   },
   "devDependencies": {
     "shadow-cljs": "^2.22.9"
@@ -15,6 +18,7 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "5.11.8",
+    "gh-pages": "^5.0.0",
     "highlight.js": "11.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"

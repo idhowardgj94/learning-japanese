@@ -16,7 +16,7 @@
                       :infer-externs :auto}
    :modules
    {:main
-    {:init-fn sports.new-app/init}}}
+    {:init-fn howard.learning-japanese.core/init}}}
   :dev
   {:target :browser
    :closure-defines {}

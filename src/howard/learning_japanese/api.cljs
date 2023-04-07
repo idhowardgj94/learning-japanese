@@ -9,7 +9,7 @@
 (re-frame/reg-fx
  ::load-from-edn
  (fn [_]
-   (GET "/words.edn"
+   (GET "words.edn"
      {:handler (fn [response]
                  (let [data (read-string response)]
                    (re-frame/dispatch [::events/set-word-data data])))})))
