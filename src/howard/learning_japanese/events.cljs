@@ -1,7 +1,14 @@
 (ns howard.learning-japanese.events
   (:require
    [day8.re-frame.tracing :refer-macros [fn-traced]]
+   [howard.learning-japanese.db :refer [db]]
    [re-frame.core :as re-frame]))
+
+(re-frame/reg-event-db
+ ::navigate
+ (fn-traced
+  [db [_ m]]
+  (assoc db :match m)))
 
 (re-frame/reg-event-db
  ::set-word-data
@@ -14,10 +21,7 @@
  ::initialise-db
  (fn-traced
   [_ _]
-  {:word/card-answer false
-   :word/current-index 0
-   :word/card-mode "hide-chinese"
-   :word/card-data []}))
+  db))
 
 (re-frame/reg-event-db
  ::change-card-mode

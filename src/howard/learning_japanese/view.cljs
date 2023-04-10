@@ -3,10 +3,12 @@
    [day8.re-frame.tracing :refer [fn-traced]]
    [re-frame.core :as re-frame]
    [reagent-mui.components :refer [box button card card-actions card-content
-                                   container grid typography]]
+                                   container grid typography css-baseline
+                                   app-bar toolbar]]
    [reagent-mui.icons.circle-notifications :refer [circle-notifications]]
    [reagent-mui.icons.mode :refer [mode]]
-   [howard.learning-japanese.events :as events]))
+   [howard.learning-japanese.events :as events]
+   [reitit.frontend.easy :as rfe]))
 
 (re-frame/reg-sub
  ::card-answer-field
@@ -81,37 +83,70 @@
                            (re-frame/dispatch [::events/change-card-mode "hide-japanese"]))}
        [mode {:font-size "large"}]]]]))
 
+(defn word-page
+  "the word page"
+  [match]
+  (let [{data :word/current-data
+         mode :word/card-mode} @(re-frame/subscribe [::get-current-card-data])]
+    [:div {:style {:flex 1
+                   :display "flex"
+                   :flex-direction "column"}}
+     [box {:sx {:margin "auto 0"}}
+      (if (= mode "hide-chinese")
+        [japanese-word-card data]
+        [chinese-word-card data])
+      [grid {:container true
+             :spacing 2
+             :mt 2}
+       [grid {:item true
+              :xs 6}
+        [button {:variant "contained"
+                 :full-width true
+                 :on-click #(re-frame/dispatch [::events/word-prev])
+                 :color "secondary"} "previous"]]
+       [grid {:item true
+              :xs 6}
+        [button {:variant "contained"
+                 :on-click #(re-frame/dispatch [::events/word-next])
+                 :full-width true} "next"]]]]]))
+
+(defn word-list-page
+  [_]
+  [:<>
+   [toolbar]
+   [:h1 "TODO"]])
+
+(re-frame/reg-sub
+ ::match
+ (fn-traced
+  [db _]
+  (:match db)))
+
 (defn app
   "the root of the app"
   []
-  (let [{data :word/current-data
-         mode :word/card-mode} @(re-frame/subscribe [::get-current-card-data])]
-    [container {:fixed true
-                :max-width "xs"
-                :sx {:display "flex"
-                     :flex-direction "column"
-                     :height "100%"}}
-     [:div {:style {:flex 1
-                    :display "flex"
-                    :flex-direction "column"}}
-      [box {:sx {:margin "auto 0"}}
-       (if (= mode "hide-chinese")
-         [japanese-word-card data]
-         [chinese-word-card data])
-       [grid {:container true
-              :spacing 2
-              :mt 2}
-        [grid {:item true
-               :xs 6}
-         [button {:variant "contained"
-                  :full-width true
-                  :on-click #(re-frame/dispatch [::events/word-prev])
-                  :color "secondary"} "previous"]]
-        [grid {:item true
-               :xs 6}
-         [button {:variant "contained"
-                  :on-click #(re-frame/dispatch [::events/word-next])
-                  :full-width true} "next"]]]]]
-     [:div {:style {:flex "0 1 50px"
-                    :margin-bottom "0"}}
-      ""]]))
+  (let [match @(re-frame/subscribe [::match])
+        view (:view (:data match))]
+    [:<>
+     [css-baseline]
+     [app-bar {:component "nav"}
+      [toolbar
+       [typography {:component "div"
+                    :sx {:flex-grow 1}
+                    :variant "h5"} "Japanese Learning"]
+       [box
+        [button {:sx {:color "white"}
+                 :href (rfe/href :word-list-page)} "Words"]
+        [button {:sx  {:color "white"}
+                 :href (rfe/href :word)} "Grammer"]]]]
+     [container {:fixed true
+                 :max-width "xs"
+                 :sx {:display "flex"
+                      :flex-direction "column"
+                      :height "100%"}}
+      (when (and match
+                 view)
+        [view match])
+      [:div {:style {:flex "0 1 50px"
+                     :margin-bottom "0"}}
+       ""]]]))

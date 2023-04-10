@@ -1,18 +1,30 @@
 (ns howard.learning-japanese.core
   (:require
+   [cljss.core :as css]
+   [howard.learning-japanese.api :as api]
+   [howard.learning-japanese.events :as events]
+   [howard.learning-japanese.route :refer [routes]]
+   [howard.learning-japanese.view :refer [app]]
    [re-frame.core :as re-frame]
    [reagent.core :as reagent]
    [reagent.dom :as rdom]
-   [cljss.core :as css]
-   [howard.learning-japanese.events :as events]
-   [howard.learning-japanese.api :as api]
-   [howard.learning-japanese.view :refer [app]])
+   [reitit.coercion.spec :as rss]
+   [reitit.frontend :as rf]
+   [reitit.frontend.easy :as rfe])
   (:require-macros
    [cljss.core :refer [inject-global]]))
 
 ;; default reagent compiler to functional components.
 (def functional-compiler (reagent.core/create-compiler {:function-components true}))
 (reagent/set-default-compiler! functional-compiler)
+
+(defn init-route
+  "init route use rfe."
+  []
+  (rfe/start!
+   (rf/router routes {:data {:coercion rss/coercion}})
+   (fn [m] (re-frame/dispatch [::events/navigate m]))
+   {:use-fragment true}))
 
 (defn ^:dev/after-load mount-root
   "mount re-frame root to web."
@@ -25,6 +37,7 @@
   (re-frame/clear-subscription-cache!)
   (re-frame/dispatch-sync [::events/initialise-db])
   (re-frame/dispatch [::api/load-data])
+  (init-route)
   (rdom/render [app]
                (.getElementById js/document "root")))
 
