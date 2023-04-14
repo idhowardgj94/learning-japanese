@@ -1,6 +1,8 @@
-{:paths
- ["src"]
-
+{:paths ["src" "resources"]
+ :deps {org.clojure/tools.deps.alpha ; add-lib3 branch
+        {:git/url "https://github.com/clojure/tools.deps.alpha"
+         :sha "83a477b305839c697666401508c395cfed29506a"}
+        org.clojure/data.csv {:mvn/version "1.0.1"}}
  :aliases
  {:cljs
   {:extra-deps
@@ -24,7 +26,7 @@
     org.clojure/tools.deps.alpha ; add-lib3 branch
     {:git/url "https://github.com/clojure/tools.deps.alpha"
      :sha "83a477b305839c697666401508c395cfed29506a"}}}
-
+  :libs {}
   :test {:extra-paths ["test/"]
          :extra-deps  {org.clojure/clojurescript        {:mvn/version "1.10.879"}
                        org.clojure/test.check           {:mvn/version "1.1.1"}
