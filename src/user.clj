@@ -23,13 +23,8 @@
          (map #(to-map title %))
          (into [])
          (reset! map-data))))
-
 ;; so we have a map data which contain pinging and word.
 ;; and replace with ruby html tag
-
-(def sample {:japanese "＊上＊がる"
-             :Pingjiaming "＊あ＊"})
-(map list '(1,2,3) '(4 5 6))
 
 (def re-han #"＊((?!＊).)+＊")
 
@@ -59,15 +54,8 @@
         it (get-second-item-in-list p)]
     (str "<ruby>" (first it) "<rp>(</rp>" "<rt>" (second it) "</rt>" "<rp>)</rp>" "</ruby>")))
 
-; jap (first (re-seq re-han (:japanese m)))
-;        pingyin (first (re-seq re-han (:Pingjiaming m)))
-
-(let [r (atom 0)]
-  (doseq [a [1 2 3]]
-    (swap! r + a))
-  @r)
-
 (defn get-full-part-from-regex
+  "get full part, include han zi and placeholder."
   [reg-vector]
   (first reg-vector))
 
@@ -75,17 +63,28 @@
 
 ;; replace placeholder with html.
 ;; seems finish!
-(let [res-list (transient [])]
-  (doseq [d @map-data]
-    (let [res (atom (:japanese d))]
-      (when (> (count (:Pingjiaming d)) 0)
-        (doseq [jap (re-seq re-han (:japanese d))
-                pingyin (re-seq re-han (:Pingjiaming d))]
-          ;; get the html from jap and pingyin
-          (let [html  (get-ruby-html jap pingyin)]
-            (swap! res str/replace (get-full-part-from-regex jap) html)))
-        (conj! @res))
-      (conj! res-list @res)))
-  (persistent! res-list))
+()
+(def data (atom nil))
 
-(doc str/replace)
+(->> (let [res-list (transient [])]
+       (doseq [d @map-data]
+         (let [res (atom (:word d))]
+           (when (> (count (:pingjiaming d)) 0)
+             (doseq [jap (re-seq re-han (:word d))
+                     pingyin (re-seq re-han (:pingjiaming d))]
+               ;; get the html from jap and pingyin
+               (let [html  (get-ruby-html jap pingyin)]
+                 (swap! res str/replace (get-full-part-from-regex jap) html)))
+             (conj! @res))
+           (conj! res-list @res)))
+       (persistent! res-list))
+     (reset! data))
+
+(defn transform-to-edn
+  "transform to edn that website use."
+  [map-data data]
+  (->> (map list map-data data)
+       (map (fn [it] (assoc (first it) :word (second it))))
+       (into [])))
+
+(spit "resources/public/words.edn" (transform-to-edn @map-data @data))

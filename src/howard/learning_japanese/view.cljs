@@ -45,8 +45,8 @@
         [:<>
          [box {:component "h3"
                :pt 1
-               :sx {:font-weight "bold"}}
-          word]
+               :dangerouslySetInnerHTML {:__html word}
+               :sx {:font-weight "bold"}}]
          [box {:component "p"
                :pl 2}
           sentence]])]
@@ -63,10 +63,13 @@
   "define a word card component,
   which can show eithor chinese or japanese"
   [{:keys [word sentence chinese]}]
+  (js/console.log word)
   (let [answer-field @(re-frame/subscribe [::card-answer-field])]
     [card
      [card-content
-      [typography {:variant "h3"} word]
+      [typography {:variant "h3"
+                   :dangerouslySetInnerHTML {:__html word}}]
+
       (when answer-field
         [box {:component "div"
               :pt 1
