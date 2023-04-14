@@ -1,9 +1,9 @@
 goog.provide('rewrite_clj.zip.utils');
-rewrite_clj.zip.utils.update_in_path = (function rewrite_clj$zip$utils$update_in_path(p__40111,k,f){
-var vec__40113 = p__40111;
-var node = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40113,(0),null);
-var path = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40113,(1),null);
-var loc = vec__40113;
+rewrite_clj.zip.utils.update_in_path = (function rewrite_clj$zip$utils$update_in_path(p__40424,k,f){
+var vec__40425 = p__40424;
+var node = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40425,(0),null);
+var path = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40425,(1),null);
+var loc = vec__40425;
 var v = cljs.core.get.cljs$core$IFn$_invoke$arity$2(path,k);
 if(cljs.core.seq(v)){
 return cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [node,cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(path,k,(f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(v) : f.call(null,v)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"changed?","changed?",-437828330),true], 0))], null),cljs.core.meta(loc));
@@ -37,8 +37,8 @@ return and__5043__auto__;
 })())){
 return zloc__$1;
 } else {
-var G__40208 = clojure.zip.remove(zloc__$1);
-zloc__$1 = G__40208;
+var G__40478 = clojure.zip.remove(zloc__$1);
+zloc__$1 = G__40478;
 continue;
 }
 break;
@@ -55,8 +55,8 @@ var temp__5751__auto__ = clojure.zip.right(zloc__$1);
 if(cljs.core.truth_(temp__5751__auto__)){
 var rloc = temp__5751__auto__;
 if(cljs.core.truth_((p_QMARK_.cljs$core$IFn$_invoke$arity$1 ? p_QMARK_.cljs$core$IFn$_invoke$arity$1(rloc) : p_QMARK_.call(null,rloc)))){
-var G__40210 = rewrite_clj.zip.utils.remove_right(zloc__$1);
-zloc__$1 = G__40210;
+var G__40480 = rewrite_clj.zip.utils.remove_right(zloc__$1);
+zloc__$1 = G__40480;
 continue;
 } else {
 return zloc__$1;
@@ -78,8 +78,8 @@ var temp__5751__auto__ = clojure.zip.left(zloc__$1);
 if(cljs.core.truth_(temp__5751__auto__)){
 var lloc = temp__5751__auto__;
 if(cljs.core.truth_((p_QMARK_.cljs$core$IFn$_invoke$arity$1 ? p_QMARK_.cljs$core$IFn$_invoke$arity$1(lloc) : p_QMARK_.call(null,lloc)))){
-var G__40213 = rewrite_clj.zip.utils.remove_left(zloc__$1);
-zloc__$1 = G__40213;
+var G__40483 = rewrite_clj.zip.utils.remove_left(zloc__$1);
+zloc__$1 = G__40483;
 continue;
 } else {
 return zloc__$1;
@@ -94,14 +94,14 @@ break;
  * Remove current node and move left. If current node is at the leftmost
  * location, returns `nil`.
  */
-rewrite_clj.zip.utils.remove_and_move_left = (function rewrite_clj$zip$utils$remove_and_move_left(p__40152){
-var vec__40157 = p__40152;
-var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40157,(0),null);
-var map__40160 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40157,(1),null);
-var map__40160__$1 = cljs.core.__destructure_map(map__40160);
-var path = map__40160__$1;
-var l = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40160__$1,new cljs.core.Keyword(null,"l","l",1395893423));
-var loc = vec__40157;
+rewrite_clj.zip.utils.remove_and_move_left = (function rewrite_clj$zip$utils$remove_and_move_left(p__40449){
+var vec__40452 = p__40449;
+var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40452,(0),null);
+var map__40455 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40452,(1),null);
+var map__40455__$1 = cljs.core.__destructure_map(map__40455);
+var path = map__40455__$1;
+var l = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40455__$1,new cljs.core.Keyword(null,"l","l",1395893423));
+var loc = vec__40452;
 if(cljs.core.seq(l)){
 return cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.peek(l),cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(path,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"l","l",1395893423)], null),cljs.core.pop),new cljs.core.Keyword(null,"changed?","changed?",-437828330),true)], null),cljs.core.meta(loc));
 } else {
@@ -112,14 +112,14 @@ return null;
  * Remove current node and move right. If current node is at the rightmost
  * location, returns `nil`.
  */
-rewrite_clj.zip.utils.remove_and_move_right = (function rewrite_clj$zip$utils$remove_and_move_right(p__40171){
-var vec__40176 = p__40171;
-var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40176,(0),null);
-var map__40179 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40176,(1),null);
-var map__40179__$1 = cljs.core.__destructure_map(map__40179);
-var path = map__40179__$1;
-var r = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40179__$1,new cljs.core.Keyword(null,"r","r",-471384190));
-var loc = vec__40176;
+rewrite_clj.zip.utils.remove_and_move_right = (function rewrite_clj$zip$utils$remove_and_move_right(p__40460){
+var vec__40461 = p__40460;
+var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40461,(0),null);
+var map__40464 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40461,(1),null);
+var map__40464__$1 = cljs.core.__destructure_map(map__40464);
+var path = map__40464__$1;
+var r = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40464__$1,new cljs.core.Keyword(null,"r","r",-471384190));
+var loc = vec__40461;
 if(cljs.core.seq(r)){
 return cljs.core.with_meta(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.first(r),cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(path,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"r","r",-471384190)], null),cljs.core.next),new cljs.core.Keyword(null,"changed?","changed?",-437828330),true)], null),cljs.core.meta(loc));
 } else {
@@ -127,15 +127,15 @@ return null;
 }
 });
 rewrite_clj.zip.utils.remove_and_move_up = (function rewrite_clj$zip$utils$remove_and_move_up(loc){
-var vec__40188 = loc;
-var node = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40188,(0),null);
-var map__40191 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40188,(1),null);
-var map__40191__$1 = cljs.core.__destructure_map(map__40191);
-var path = map__40191__$1;
-var l = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40191__$1,new cljs.core.Keyword(null,"l","l",1395893423));
-var ppath = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40191__$1,new cljs.core.Keyword(null,"ppath","ppath",-1758182784));
-var pnodes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40191__$1,new cljs.core.Keyword(null,"pnodes","pnodes",1739080565));
-var rs = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40191__$1,new cljs.core.Keyword(null,"r","r",-471384190));
+var vec__40469 = loc;
+var node = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40469,(0),null);
+var map__40472 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40469,(1),null);
+var map__40472__$1 = cljs.core.__destructure_map(map__40472);
+var path = map__40472__$1;
+var l = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40472__$1,new cljs.core.Keyword(null,"l","l",1395893423));
+var ppath = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40472__$1,new cljs.core.Keyword(null,"ppath","ppath",-1758182784));
+var pnodes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40472__$1,new cljs.core.Keyword(null,"pnodes","pnodes",1739080565));
+var rs = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__40472__$1,new cljs.core.Keyword(null,"r","r",-471384190));
 if((path == null)){
 throw (new Error("Remove at top"));
 } else {

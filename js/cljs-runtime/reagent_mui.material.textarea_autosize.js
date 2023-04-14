@@ -29,23 +29,23 @@ return (0);
 });
 reagent_mui.material.textarea_autosize.react_textarea_autosize = module$node_modules$react$index.forwardRef((function reagent_mui$material$textarea_autosize$textarea_autosize(props,ref){
 var props__$1 = reagent_mui.util.js__GT_clj_SINGLEQUOTE_(props);
-var map__52243 = props__$1;
-var map__52243__$1 = cljs.core.__destructure_map(map__52243);
-var on_change = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__52243__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
-var placeholder = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__52243__$1,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083));
-var max_rows = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__52243__$1,new cljs.core.Keyword(null,"max-rows","max-rows",-2131113613));
-var min_rows = cljs.core.get.cljs$core$IFn$_invoke$arity$3(map__52243__$1,new cljs.core.Keyword(null,"min-rows","min-rows",1428640765),(1));
-var style = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__52243__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var value = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__52243__$1,new cljs.core.Keyword(null,"value","value",305978217));
+var map__32048 = props__$1;
+var map__32048__$1 = cljs.core.__destructure_map(map__32048);
+var on_change = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32048__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
+var placeholder = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32048__$1,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083));
+var max_rows = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32048__$1,new cljs.core.Keyword(null,"max-rows","max-rows",-2131113613));
+var min_rows = cljs.core.get.cljs$core$IFn$_invoke$arity$3(map__32048__$1,new cljs.core.Keyword(null,"min-rows","min-rows",1428640765),(1));
+var style = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32048__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var value = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__32048__$1,new cljs.core.Keyword(null,"value","value",305978217));
 var other_props = cljs.core.dissoc.cljs$core$IFn$_invoke$arity$variadic(props__$1,new cljs.core.Keyword(null,"input-ref","input-ref",575432746),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"on-change","on-change",-732046149),new cljs.core.Keyword(null,"max-rows","max-rows",-2131113613),new cljs.core.Keyword(null,"min-rows","min-rows",1428640765),new cljs.core.Keyword(null,"style","style",-496642736)], 0));
 var controlled_QMARK_ = reagent_mui.util.use_ref((!((value == null)))).current;
 var input_ref = reagent_mui.util.use_ref(null);
 var shadow_ref = reagent_mui.util.use_ref(null);
 var renders = reagent_mui.util.use_ref((0));
 var handle_ref = reagent_mui.util.use_fork_ref.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"input-ref","input-ref",575432746).cljs$core$IFn$_invoke$arity$1(props__$1),input_ref,ref], 0));
-var vec__52244 = reagent_mui.util.use_state(cljs.core.PersistentArrayMap.EMPTY);
-var state = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__52244,(0),null);
-var set_state = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__52244,(1),null);
+var vec__32049 = reagent_mui.util.use_state(cljs.core.PersistentArrayMap.EMPTY);
+var state = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32049,(0),null);
+var set_state = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__32049,(1),null);
 var sync_height = reagent_mui.util.use_callback((function (){
 var input = input_ref.current;
 var container_window = module$node_modules$$mui$material$node$utils$index.ownerWindow(input);
@@ -80,23 +80,23 @@ var border = (reagent_mui.material.textarea_autosize.get_style_value(computed_st
 var inner_height = shadow__$1.scrollHeight;
 var _ = (shadow__$1.value = "x");
 var single_row_height = shadow__$1.scrollHeight;
-var outer_height = (function (){var G__52247 = inner_height;
-var G__52247__$1 = (cljs.core.truth_(min_rows)?(function (){var x__5130__auto__ = G__52247;
+var outer_height = (function (){var G__32052 = inner_height;
+var G__32052__$1 = (cljs.core.truth_(min_rows)?(function (){var x__5130__auto__ = G__32052;
 var y__5131__auto__ = ((new Number(min_rows)) * single_row_height);
 return ((x__5130__auto__ > y__5131__auto__) ? x__5130__auto__ : y__5131__auto__);
-})():G__52247);
-var G__52247__$2 = (cljs.core.truth_(max_rows)?(function (){var x__5133__auto__ = G__52247__$1;
+})():G__32052);
+var G__32052__$2 = (cljs.core.truth_(max_rows)?(function (){var x__5133__auto__ = G__32052__$1;
 var y__5134__auto__ = ((new Number(max_rows)) * single_row_height);
 return ((x__5133__auto__ < y__5134__auto__) ? x__5133__auto__ : y__5134__auto__);
-})():G__52247__$1);
-var x__5130__auto__ = G__52247__$2;
+})():G__32052__$1);
+var x__5130__auto__ = G__32052__$2;
 var y__5131__auto__ = single_row_height;
 return ((x__5130__auto__ > y__5131__auto__) ? x__5130__auto__ : y__5131__auto__);
 
 })();
 var outer_height_style = ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2("border-box",box_sizing))?((outer_height + padding) + border):outer_height);
 var overflow_QMARK_ = (!(reagent_mui.material.textarea_autosize.different_QMARK_(outer_height,inner_height)));
-var G__52248 = (function (prev_state){
+var G__32053 = (function (prev_state){
 if((((renders.current < (20))) && ((((((outer_height_style > (0))) && (reagent_mui.material.textarea_autosize.different_QMARK_(new cljs.core.Keyword(null,"outer-height-style","outer-height-style",426760912).cljs$core$IFn$_invoke$arity$1(prev_state),outer_height_style)))) || (cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(overflow_QMARK_,new cljs.core.Keyword(null,"overflow?","overflow?",124924720).cljs$core$IFn$_invoke$arity$1(prev_state))))))){
 reagent_mui.util.swap_ref(renders,cljs.core.inc);
 
@@ -110,7 +110,7 @@ console.error("Material-UI: too many re-renders. The layout is unstable.\nTextar
 return prev_state;
 }
 });
-return (set_state.cljs$core$IFn$_invoke$arity$1 ? set_state.cljs$core$IFn$_invoke$arity$1(G__52248) : set_state.call(null,G__52248));
+return (set_state.cljs$core$IFn$_invoke$arity$1 ? set_state.cljs$core$IFn$_invoke$arity$1(G__32053) : set_state.call(null,G__32053));
 }
 }),[max_rows,min_rows,placeholder]);
 var handle_change = (function (e){

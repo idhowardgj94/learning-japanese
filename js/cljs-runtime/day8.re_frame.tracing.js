@@ -22,16 +22,16 @@ if(clojure.zip.end_QMARK_(loc)){
 return seen;
 } else {
 if((node instanceof cljs.core.Symbol)){
-var G__52222 = clojure.zip.next(loc);
-var G__52223 = cljs.core.conj.cljs$core$IFn$_invoke$arity$2(seen,node);
-loc = G__52222;
-seen = G__52223;
+var G__37017 = clojure.zip.next(loc);
+var G__37018 = cljs.core.conj.cljs$core$IFn$_invoke$arity$2(seen,node);
+loc = G__37017;
+seen = G__37018;
 continue;
 } else {
-var G__52224 = clojure.zip.next(loc);
-var G__52225 = seen;
-loc = G__52224;
-seen = G__52225;
+var G__37019 = clojure.zip.next(loc);
+var G__37020 = seen;
+loc = G__37019;
+seen = G__37020;
 continue;
 
 }
@@ -41,14 +41,14 @@ break;
 });
 day8.re_frame.tracing.fn_body = (function day8$re_frame$tracing$fn_body(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___52226 = arguments.length;
-var i__5770__auto___52227 = (0);
+var len__5769__auto___37021 = arguments.length;
+var i__5770__auto___37022 = (0);
 while(true){
-if((i__5770__auto___52227 < len__5769__auto___52226)){
-args__5775__auto__.push((arguments[i__5770__auto___52227]));
+if((i__5770__auto___37022 < len__5769__auto___37021)){
+args__5775__auto__.push((arguments[i__5770__auto___37022]));
 
-var G__52228 = (i__5770__auto___52227 + (1));
-i__5770__auto___52227 = G__52228;
+var G__37023 = (i__5770__auto___37022 + (1));
+i__5770__auto___37022 = G__37023;
 continue;
 } else {
 }
@@ -80,11 +80,11 @@ return cljs.core.sequence.cljs$core$IFn$_invoke$arity$1(cljs.core.seq(cljs.core.
 (day8.re_frame.tracing.fn_body.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(day8.re_frame.tracing.fn_body.cljs$lang$applyTo = (function (seq52210){
-var G__52211 = cljs.core.first(seq52210);
-var seq52210__$1 = cljs.core.next(seq52210);
+(day8.re_frame.tracing.fn_body.cljs$lang$applyTo = (function (seq36991){
+var G__36992 = cljs.core.first(seq36991);
+var seq36991__$1 = cljs.core.next(seq36991);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__52211,seq52210__$1);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__36992,seq36991__$1);
 }));
 
 
