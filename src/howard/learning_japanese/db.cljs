@@ -5,4 +5,5 @@
    :word/current-index 0
    :word/card-mode "hide-chinese"
    :word/card-data []
+   :layout/toggle-drawler false
    :match nil})

@@ -4,9 +4,12 @@
    [re-frame.core :as re-frame]
    [reagent-mui.components :refer [box button card card-actions card-content
                                    container grid typography css-baseline
-                                   app-bar toolbar]]
+                                   divider list list-item list-item-button list-item-text
+                                   app-bar toolbar menu icon-button drawer]]
    [reagent-mui.icons.circle-notifications :refer [circle-notifications]]
+   [reagent-mui.icons.menu :refer [menu]]
    [reagent-mui.icons.mode :refer [mode]]
+
    [howard.learning-japanese.events :as events]
    [reitit.frontend.easy :as rfe]))
 
@@ -33,6 +36,7 @@
               (assoc {}
                      :word/current-data $
                      :word/card-mode mode))))
+
 (defn chinese-word-card
   "define a word card component,
   which can show eithor chinese or japanese"
@@ -63,7 +67,6 @@
   "define a word card component,
   which can show eithor chinese or japanese"
   [{:keys [word sentence chinese]}]
-  (js/console.log word)
   (let [answer-field @(re-frame/subscribe [::card-answer-field])]
     [card
      [card-content
@@ -125,23 +128,65 @@
   [db _]
   (:match db)))
 
+(re-frame/reg-sub
+ ::open-drawler
+ (fn-traced
+  [db _]
+  (:layout/toggle-drawler db)))
+
+(defn drawer-component
+  []
+  [box {:on-click (fn []
+                    (re-frame/dispatch [::events/layout.toggle-drawler]))
+        :sx {:text-align "center"}}
+   [typography {:variant "h6"
+                :sx {:my 2}}
+    "Learning Japanese"]
+   [divider]
+   [list
+    [list-item {:disablePadding true}
+     [list-item-button {:sx {:text-align "center"}
+                        :href (rfe/href :word-list-page)}
+      [list-item-text {:primary "Words"}]]]
+    [list-item {:disablePadding true}
+     [list-item-button {:sx {:text-align "center"}
+                        :href (rfe/href :word)}
+      [list-item-text {:primary "Content"}]]]]])
+
 (defn app
   "the root of the app"
   []
   (let [match @(re-frame/subscribe [::match])
+        open-drawler @(re-frame/subscribe [::open-drawler])
         view (:view (:data match))]
     [:<>
      [css-baseline]
      [app-bar {:component "nav"}
       [toolbar
+       [icon-button {:sx {:mr 2
+                          :display {:sm "none"}}
+                     :color "inherit"
+                     :on-click #(re-frame/dispatch [::events/layout.toggle-drawler])}
+        [menu]]
        [typography {:component "div"
                     :sx {:flex-grow 1}
                     :variant "h5"} "Japanese Learning"]
-       [box
+       [box {:sx {:display {:xs "none"
+                            :md "flex"}}}
         [button {:sx {:color "white"}
                  :href (rfe/href :word-list-page)} "Words"]
         [button {:sx  {:color "white"}
                  :href (rfe/href :word)} "Grammer"]]]]
+     [box {:component "nav"}
+      [drawer {:varient "temporary"
+               :open open-drawler
+               :on-close (fn []
+                           (re-frame/dispatch [::events/layout.toggle-drawler]))
+               :ModalProps {:keepMounted true}
+               :sx {:display {:xs "block" :sm "none"}
+                    "& .MuiDrawer-paper" {:box-sizing "border-box"
+                                          :width "240px"}}}
+       [drawer-component]]]
      [container {:fixed true
                  :max-width "xs"
                  :sx {:display "flex"

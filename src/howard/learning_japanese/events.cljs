@@ -52,4 +52,10 @@
         (assoc :word/card-answer false))
     db)))
 
+(re-frame/reg-event-db
+ ::layout.toggle-drawler
+ (fn-traced
+  [db _]
+  (assoc db :layout/toggle-drawler (not (:layout/toggle-drawler db)))))
+
 #_((re-frame/dispatch [::toggle-word-answer]))
