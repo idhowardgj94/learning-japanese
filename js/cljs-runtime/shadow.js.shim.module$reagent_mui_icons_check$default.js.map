@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$reagent_mui_icons_check$default.js",
+"lineCount":3,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,uDAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,sCAAf,GAAwDC,OAAxD,GAAgEC,GAAIC,CAAAA,KAAMC,CAAAA,KAAMC,CAAAA,OAAhF;;",
+"sources":["shadow.js.shim.module$reagent_mui_icons_check$default.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$reagent_mui_icons_check$default\");\nshadow.js.shim.module$reagent_mui_icons_check$default = reagent-mui.icons.check.default;\n"],
+"names":["goog","provide","shadow","js","shim","module$reagent_mui_icons_check$default","reagent","mui","icons","check","default"]
+}

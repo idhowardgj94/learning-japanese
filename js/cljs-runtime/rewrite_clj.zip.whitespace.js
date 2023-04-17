@@ -1,29 +1,29 @@
 goog.provide('rewrite_clj.zip.whitespace');
 rewrite_clj.zip.whitespace.whitespace_QMARK_ = (function rewrite_clj$zip$whitespace$whitespace_QMARK_(zloc){
-var G__40348 = zloc;
-var G__40348__$1 = (((G__40348 == null))?null:clojure.zip.node(G__40348));
-if((G__40348__$1 == null)){
+var G__44653 = zloc;
+var G__44653__$1 = (((G__44653 == null))?null:clojure.zip.node(G__44653));
+if((G__44653__$1 == null)){
 return null;
 } else {
-return (rewrite_clj.node.whitespace_QMARK_.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.node.whitespace_QMARK_.cljs$core$IFn$_invoke$arity$1(G__40348__$1) : rewrite_clj.node.whitespace_QMARK_.call(null,G__40348__$1));
+return (rewrite_clj.node.whitespace_QMARK_.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.node.whitespace_QMARK_.cljs$core$IFn$_invoke$arity$1(G__44653__$1) : rewrite_clj.node.whitespace_QMARK_.call(null,G__44653__$1));
 }
 });
 rewrite_clj.zip.whitespace.linebreak_QMARK_ = (function rewrite_clj$zip$whitespace$linebreak_QMARK_(zloc){
-var G__40349 = zloc;
-var G__40349__$1 = (((G__40349 == null))?null:clojure.zip.node(G__40349));
-if((G__40349__$1 == null)){
+var G__44657 = zloc;
+var G__44657__$1 = (((G__44657 == null))?null:clojure.zip.node(G__44657));
+if((G__44657__$1 == null)){
 return null;
 } else {
-return (rewrite_clj.node.linebreak_QMARK_.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.node.linebreak_QMARK_.cljs$core$IFn$_invoke$arity$1(G__40349__$1) : rewrite_clj.node.linebreak_QMARK_.call(null,G__40349__$1));
+return (rewrite_clj.node.linebreak_QMARK_.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.node.linebreak_QMARK_.cljs$core$IFn$_invoke$arity$1(G__44657__$1) : rewrite_clj.node.linebreak_QMARK_.call(null,G__44657__$1));
 }
 });
 rewrite_clj.zip.whitespace.comment_QMARK_ = (function rewrite_clj$zip$whitespace$comment_QMARK_(zloc){
-var G__40350 = zloc;
-var G__40350__$1 = (((G__40350 == null))?null:clojure.zip.node(G__40350));
-if((G__40350__$1 == null)){
+var G__44660 = zloc;
+var G__44660__$1 = (((G__44660 == null))?null:clojure.zip.node(G__44660));
+if((G__44660__$1 == null)){
 return null;
 } else {
-return (rewrite_clj.node.comment_QMARK_.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.node.comment_QMARK_.cljs$core$IFn$_invoke$arity$1(G__40350__$1) : rewrite_clj.node.comment_QMARK_.call(null,G__40350__$1));
+return (rewrite_clj.node.comment_QMARK_.cljs$core$IFn$_invoke$arity$1 ? rewrite_clj.node.comment_QMARK_.cljs$core$IFn$_invoke$arity$1(G__44660__$1) : rewrite_clj.node.comment_QMARK_.call(null,G__44660__$1));
 }
 });
 rewrite_clj.zip.whitespace.whitespace_not_linebreak_QMARK_ = (function rewrite_clj$zip$whitespace$whitespace_not_linebreak_QMARK_(zloc){
@@ -35,12 +35,12 @@ return and__5043__auto__;
 }
 });
 rewrite_clj.zip.whitespace.whitespace_or_comment_QMARK_ = (function rewrite_clj$zip$whitespace$whitespace_or_comment_QMARK_(zloc){
-var G__40351 = zloc;
-var G__40351__$1 = (((G__40351 == null))?null:clojure.zip.node(G__40351));
-if((G__40351__$1 == null)){
+var G__44665 = zloc;
+var G__44665__$1 = (((G__44665 == null))?null:clojure.zip.node(G__44665));
+if((G__44665__$1 == null)){
 return null;
 } else {
-return rewrite_clj.node.whitespace_or_comment_QMARK_(G__40351__$1);
+return rewrite_clj.node.whitespace_or_comment_QMARK_(G__44665__$1);
 }
 });
 /**
@@ -54,8 +54,8 @@ return cljs.core.first(cljs.core.drop_while.cljs$core$IFn$_invoke$arity$2(p_QMAR
  * non-comment node is encountered.
  */
 rewrite_clj.zip.whitespace.skip_whitespace = (function rewrite_clj$zip$whitespace$skip_whitespace(var_args){
-var G__40354 = arguments.length;
-switch (G__40354) {
+var G__44675 = arguments.length;
+switch (G__44675) {
 case 1:
 return rewrite_clj.zip.whitespace.skip_whitespace.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -90,8 +90,8 @@ return rewrite_clj.zip.whitespace.skip_whitespace.cljs$core$IFn$_invoke$arity$2(
  * Prepend a whitespace node representing the given number of spaces (default: 1).
  */
 rewrite_clj.zip.whitespace.prepend_space = (function rewrite_clj$zip$whitespace$prepend_space(var_args){
-var G__40360 = arguments.length;
-switch (G__40360) {
+var G__44692 = arguments.length;
+switch (G__44692) {
 case 1:
 return rewrite_clj.zip.whitespace.prepend_space.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -120,8 +120,8 @@ return clojure.zip.insert_left(zloc,(rewrite_clj.node.spaces.cljs$core$IFn$_invo
  * Append a whitespace node representing the given number of spaces (default: 1).
  */
 rewrite_clj.zip.whitespace.append_space = (function rewrite_clj$zip$whitespace$append_space(var_args){
-var G__40366 = arguments.length;
-switch (G__40366) {
+var G__44699 = arguments.length;
+switch (G__44699) {
 case 1:
 return rewrite_clj.zip.whitespace.append_space.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -150,8 +150,8 @@ return clojure.zip.insert_right(zloc,(rewrite_clj.node.spaces.cljs$core$IFn$_inv
  * Prepend a newlines node representing the given number of newlines (default: 1).
  */
 rewrite_clj.zip.whitespace.prepend_newline = (function rewrite_clj$zip$whitespace$prepend_newline(var_args){
-var G__40368 = arguments.length;
-switch (G__40368) {
+var G__44704 = arguments.length;
+switch (G__44704) {
 case 1:
 return rewrite_clj.zip.whitespace.prepend_newline.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -180,8 +180,8 @@ return clojure.zip.insert_left(zloc,(rewrite_clj.node.newlines.cljs$core$IFn$_in
  * Append a newline node representing the given number of newlines (default: 1).
  */
 rewrite_clj.zip.whitespace.append_newline = (function rewrite_clj$zip$whitespace$append_newline(var_args){
-var G__40373 = arguments.length;
-switch (G__40373) {
+var G__44720 = arguments.length;
+switch (G__44720) {
 case 1:
 return rewrite_clj.zip.whitespace.append_newline.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 

@@ -13,14 +13,14 @@ return reagent.core.as_element.cljs$core$IFn$_invoke$arity$1(new cljs.core.Persi
 reagent_mui.material.text_field.mui_text_field = reagent.core.adapt_react_class(module$node_modules$$mui$material$node$TextField$index.default);
 reagent_mui.material.text_field.text_field = (function reagent_mui$material$text_field$text_field(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___32058 = arguments.length;
-var i__5770__auto___32059 = (0);
+var len__5769__auto___57277 = arguments.length;
+var i__5770__auto___57278 = (0);
 while(true){
-if((i__5770__auto___32059 < len__5769__auto___32058)){
-args__5775__auto__.push((arguments[i__5770__auto___32059]));
+if((i__5770__auto___57278 < len__5769__auto___57277)){
+args__5775__auto__.push((arguments[i__5770__auto___57278]));
 
-var G__32060 = (i__5770__auto___32059 + (1));
-i__5770__auto___32059 = G__32060;
+var G__57279 = (i__5770__auto___57278 + (1));
+i__5770__auto___57278 = G__57279;
 continue;
 } else {
 }
@@ -61,14 +61,14 @@ return reagent_mui.material.text_field.input;
 }
 }
 })();
-var props__$1 = (function (){var G__32057 = props;
-var G__32057__$1 = (cljs.core.truth_(input_component)?cljs.core.update.cljs$core$IFn$_invoke$arity$3(G__32057,new cljs.core.Keyword(null,"InputProps","InputProps",-1485068760),(function (p1__32054_SHARP_){
-return reagent_mui.util.assoc_anycase.cljs$core$IFn$_invoke$arity$3(p1__32054_SHARP_,new cljs.core.Keyword(null,"input-component","input-component",-745892912),input_component);
-})):G__32057);
+var props__$1 = (function (){var G__57276 = props;
+var G__57276__$1 = (cljs.core.truth_(input_component)?cljs.core.update.cljs$core$IFn$_invoke$arity$3(G__57276,new cljs.core.Keyword(null,"InputProps","InputProps",-1485068760),(function (p1__57273_SHARP_){
+return reagent_mui.util.assoc_anycase.cljs$core$IFn$_invoke$arity$3(p1__57273_SHARP_,new cljs.core.Keyword(null,"input-component","input-component",-745892912),input_component);
+})):G__57276);
 if(cljs.core.truth_(autosize_QMARK_)){
-return cljs.core.update.cljs$core$IFn$_invoke$arity$4(G__32057__$1,new cljs.core.Keyword(null,"input-props","input-props",-1504868202),cljs.core.merge,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"max-rows","max-rows",-2131113613),max_rows,new cljs.core.Keyword(null,"min-rows","min-rows",1428640765),min_rows], null));
+return cljs.core.update.cljs$core$IFn$_invoke$arity$4(G__57276__$1,new cljs.core.Keyword(null,"input-props","input-props",-1504868202),cljs.core.merge,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"max-rows","max-rows",-2131113613),max_rows,new cljs.core.Keyword(null,"min-rows","min-rows",1428640765),min_rows], null));
 } else {
-return G__32057__$1;
+return G__57276__$1;
 }
 })();
 return cljs.core.into.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [reagent_mui.material.text_field.mui_text_field,props__$1], null),children);
@@ -77,11 +77,11 @@ return cljs.core.into.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVect
 (reagent_mui.material.text_field.text_field.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(reagent_mui.material.text_field.text_field.cljs$lang$applyTo = (function (seq32055){
-var G__32056 = cljs.core.first(seq32055);
-var seq32055__$1 = cljs.core.next(seq32055);
+(reagent_mui.material.text_field.text_field.cljs$lang$applyTo = (function (seq57274){
+var G__57275 = cljs.core.first(seq57274);
+var seq57274__$1 = cljs.core.next(seq57274);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__32056,seq32055__$1);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__57275,seq57274__$1);
 }));
 
 

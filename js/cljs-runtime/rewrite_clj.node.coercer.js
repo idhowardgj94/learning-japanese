@@ -27,8 +27,8 @@ return rewrite_clj.node.coercer.node_with_meta(rewrite_clj.node.token.token_node
 return rewrite_clj.node.coercer.node_with_meta(rewrite_clj.node.stringz.string_node(n),n);
 }));
 rewrite_clj.node.coercer.seq_node = (function rewrite_clj$node$coercer$seq_node(f,sq){
-return rewrite_clj.node.coercer.node_with_meta((function (){var G__40052 = cljs.core.vec(rewrite_clj.node.whitespace.space_separated(cljs.core.map.cljs$core$IFn$_invoke$arity$2(rewrite_clj.node.protocols.coerce,sq)));
-return (f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(G__40052) : f.call(null,G__40052));
+return rewrite_clj.node.coercer.node_with_meta((function (){var G__44470 = cljs.core.vec(rewrite_clj.node.whitespace.space_separated(cljs.core.map.cljs$core$IFn$_invoke$arity$2(rewrite_clj.node.protocols.coerce,sq)));
+return (f.cljs$core$IFn$_invoke$arity$1 ? f.cljs$core$IFn$_invoke$arity$1(G__44470) : f.call(null,G__44470));
 })(),sq);
 });
 (cljs.core.PersistentVector.prototype.rewrite_clj$node$protocols$NodeCoerceable$ = cljs.core.PROTOCOL_SENTINEL);
@@ -51,14 +51,14 @@ return rewrite_clj.node.coercer.seq_node(rewrite_clj.node.seq.list_node,sq__$1);
 var sq__$1 = this;
 return rewrite_clj.node.coercer.seq_node(rewrite_clj.node.seq.set_node,sq__$1);
 }));
-var comma_40094 = rewrite_clj.node.whitespace.whitespace_node(", ");
-var space_40095 = rewrite_clj.node.whitespace.whitespace_node(" ");
+var comma_44547 = rewrite_clj.node.whitespace.whitespace_node(", ");
+var space_44548 = rewrite_clj.node.whitespace.whitespace_node(" ");
 rewrite_clj.node.coercer.map__GT_children = (function rewrite_clj$node$coercer$map__GT_children(m){
-return cljs.core.vec(cljs.core.butlast(cljs.core.mapcat.cljs$core$IFn$_invoke$arity$variadic((function (p__40058){
-var vec__40059 = p__40058;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40059,(0),null);
-var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__40059,(1),null);
-return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [rewrite_clj.node.protocols.coerce(k),space_40095,rewrite_clj.node.protocols.coerce(v),comma_40094], null);
+return cljs.core.vec(cljs.core.butlast(cljs.core.mapcat.cljs$core$IFn$_invoke$arity$variadic((function (p__44487){
+var vec__44488 = p__44487;
+var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44488,(0),null);
+var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__44488,(1),null);
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [rewrite_clj.node.protocols.coerce(k),space_44548,rewrite_clj.node.protocols.coerce(v),comma_44547], null);
 }),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([m], 0))));
 });
 (cljs.core.PersistentHashMap.prototype.rewrite_clj$node$protocols$NodeCoerceable$ = cljs.core.PROTOCOL_SENTINEL);
