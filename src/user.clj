@@ -13,7 +13,7 @@
 ;; store final data
 (def data (atom nil))
 
-(def re-han "regex for finding placeholder." #"＊((?!＊).)+＊")
+(def re-han "regex for finding placeholder." #"＊(((?!＊).)+)＊")
 
 (defn to-map
   "transform japan_word_sorce csv to key - value pairs"
@@ -70,7 +70,6 @@
                (conj! @res))
              (conj! res-list @res)))
          (persistent! res-list))))
-
 (defn transform-to-edn
   "transform to edn that website use."
   [map-data data]
@@ -94,3 +93,4 @@
   (println "to resources/public/words.edn")
   (read-and-export   "./resources/japan_word_sorce.csv" "resources/public/words.edn")
   (println "done"))
+
