@@ -9,7 +9,7 @@
             [cljs.reader :refer [read-string]]
             [howard.learning-japanese.events :as events]))
 
-(def db (atom nil))
+(def indexdb (atom nil))
 (def ds-db (atom nil))
 (declare get-words-data)
 (declare setup-memory-db)
@@ -34,16 +34,16 @@
   "handle indexdb success open"
   [event idb]
   (js/console.log "inside handle-success" event)
-  (reset! db idb))
+  (reset! indexdb idb))
 
 (defn sync-words-data
   []
   (re-frame/dispatch [::events/set-app-status :get-words-data])
   (GET "words.edn"
     {:handler (fn [response]
-                (js/console.log @db)
+                (js/console.log @indexdb)
                 (let [data (read-string response)
-                      tx (-> @db
+                      tx (-> @indexdb
                              (db/result)
                              (db/create-database)
                              (db/transaction ["words"] "readwrite"))
@@ -60,7 +60,7 @@
     (js/Promise. (fn [res]
                    (reset! timeout (js/setInterval
                                     (fn []
-                                      (when-not (nil? @db)
+                                      (when-not (nil? @indexdb)
                                         (js/clearTimeout @timeout)
                                         (res nil))) 1000))))))
 
@@ -68,6 +68,7 @@
   "init and open indexdb"
   []
   (js/console.log "init index db 'learning-jpaanese' v1...")
+  (js/console.log "QQQ?????")
   (as-> (db/open "learning-japanese" 1) $
     (db/on $ "error" (fn [event] (js/console.log "inside error" event)))
     (db/on $ "blocked" (fn [event] (js/console.log "inside blocked" event)))
@@ -76,15 +77,17 @@
 
 (def data (atom {:data  (transient [])
                  :status :none}))
+
 (defn get-words-data
   "get words form indexdb."
   []
   (go
+    (js/console.log "inside word data")
     (reset! data {:data (transient [])
                   :status :none})
 
     (let [_ (<p! (wait-db-done))
-          trans (-> @db
+          trans (-> @indexdb
                     (db/result)
                     (db/create-database)
                     (db/transaction ["words"] "readwrite"))
@@ -97,9 +100,16 @@
                                     (db/create-request)
                                     (db/result))]
                      (if (nil? cursor)
-                       (swap! data (fn [{:keys [data]}]
-                                     {:status :success
-                                      :data (persistent! data)}))
+                       (let [p-data (persistent! (:data @data))]
+                         (if (<= (count p-data) 0)
+                           (do
+                             (js/console.log "inside if")
+                             (sync-words-data))
+                           (do
+                             (js/console.log "inside else" (clj->js @data))
+                             (swap! data assoc
+                                    :status :success
+                                    :data p-data))))
                        (do (swap! data (fn [{:keys [data]}]
                                          (let [val (-> (db/create-cursor-with-value cursor)
                                                        (db/value)
