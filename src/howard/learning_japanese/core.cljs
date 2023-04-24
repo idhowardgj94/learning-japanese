@@ -5,6 +5,7 @@
    [howard.learning-japanese.events :as events]
    [howard.learning-japanese.route :refer [routes]]
    [howard.learning-japanese.view :refer [app]]
+   [howard.learning-japanese.indexdb :refer [setup-memory-db]]
    [re-frame.core :as re-frame]
    [reagent.core :as reagent]
    [reagent.dom :as rdom]
@@ -23,7 +24,10 @@
   []
   (rfe/start!
    (rf/router routes {:data {:coercion rss/coercion}})
-   (fn [m] (re-frame/dispatch [::events/navigate m]))
+   (fn [m]
+     (js/console.log "inside route handler")
+     (js/console.log (clj->js m))
+     (re-frame/dispatch [::events/navigate m]))
    {:use-fragment true}))
 
 (defn ^:dev/after-load mount-root
@@ -37,6 +41,7 @@
   (re-frame/clear-subscription-cache!)
   (re-frame/dispatch-sync [::events/initialise-db])
   (re-frame/dispatch [::api/load-data])
+  (setup-memory-db)
   (init-route)
   (rdom/render [app]
                (.getElementById js/document "root")))

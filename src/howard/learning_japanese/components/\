@@ -1,0 +1,21 @@
+(ns howard.learning-japanese.components.word-list-page
+  (:require
+   [reagent-mui.components :refer [box toolbar
+                                   list list-item list-item-button list-item-text]]))
+
+(defn word-list-page-mobile
+  "mobile view of word-list-page"
+  []
+  [list
+   [list-item {:disable-padding true}
+    [list-item-button {:on-click (fn [] (js/console.log "hello, world"))}
+     [list-item-text {:primary "Week1"}]]]])
+(defn word-list-page
+  [_]
+  [:<>
+   [box {:sx {:display {:sm "block" :xs "none"}}}
+    [toolbar]
+    "desktop"]
+   [box {:sx {:display {:sm "none" :xs "block"}}}
+    [toolbar]
+    [word-list-page-mobile]]])

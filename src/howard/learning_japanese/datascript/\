@@ -1,0 +1,6 @@
+(ns howard.learning-japanese.datascript.query
+  (:require
+   [howard.learning-japanese.indexdb :refer [get-ds-db]]))
+
+
+(get-ds-db)

@@ -6,4 +6,5 @@
    :word/card-mode "hide-chinese"
    :word/card-data []
    :layout/toggle-drawler false
+   :app/status :init
    :match nil})

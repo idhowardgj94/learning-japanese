@@ -13,7 +13,8 @@
    {:ns-aliases
     {day8.re-frame.tracing day8.re-frame.tracing-stubs}}
    :compiler-options {:output-feature-set :es-next
-                      :infer-externs :auto}
+                      :infer-externs :auto
+                      :externs ["datascript/externs.js"]}
    :modules
    {:main
     {:init-fn howard.learning-japanese.core/init}}}
@@ -31,7 +32,8 @@
     :closure-defines
     {re-frame.trace.trace-enabled? true
      day8.re-frame-10x.debug? true
-     day8.re-frame.tracing.trace-enabled? true}}
+     day8.re-frame.tracing.trace-enabled? true}
+    :externs ["datascript/externs.js"]}
    :devtools
    {:preloads [day8.re-frame-10x.preload]}}
 

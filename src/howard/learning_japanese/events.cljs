@@ -5,6 +5,12 @@
    [re-frame.core :as re-frame]))
 
 (re-frame/reg-event-db
+ ::set-app-status
+ (fn-traced
+  [db [_ status]]
+  (assoc db :app/status status)))
+
+(re-frame/reg-event-db
  ::navigate
  (fn-traced
   [db [_ m]]
@@ -40,8 +46,7 @@
   [db _]
   (if (< (+ 1 (:word/current-index db)) (count (:word/card-data db)))
     (-> (update db :word/current-index inc)
-        (assoc :word/card-answer false))
-    db)))
+        (assoc :word/card-answer false)))))
 
 (re-frame/reg-event-db
  ::word-prev
@@ -49,9 +54,12 @@
   [db _]
   (if (> (:word/current-index db) 0)
     (-> (update db :word/current-index dec)
-        (assoc :word/card-answer false))
-    db)))
-
+        (assoc :word/card-answer false)))))
+(re-frame/reg-event-db
+ ::word-reset
+ (fn-traced
+  [db _]
+  (-> (assoc db :word/current-index 0 :word/card-answer false))))
 (re-frame/reg-event-db
  ::layout.toggle-drawler
  (fn-traced
