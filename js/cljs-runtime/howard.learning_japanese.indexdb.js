@@ -27,60 +27,60 @@ re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.Pers
 return ajax.core.GET.cljs$core$IFn$_invoke$arity$variadic("words.edn",cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"handler","handler",-195596612),(function (response){
 console.log(cljs.core.deref(howard.learning_japanese.indexdb.indexdb));
 
-var data_48211 = cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(response);
-var tx_48212 = indexed.db.transaction.cljs$core$IFn$_invoke$arity$3(indexed.db.create_database(indexed.db.result(cljs.core.deref(howard.learning_japanese.indexdb.indexdb))),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["words"], null),"readwrite");
-var store_48213 = indexed.db.object_store.cljs$core$IFn$_invoke$arity$2(tx_48212,"words");
-var seq__48150_48214 = cljs.core.seq(data_48211);
-var chunk__48151_48215 = null;
-var count__48152_48216 = (0);
-var i__48153_48217 = (0);
+var data_48433 = cljs.reader.read_string.cljs$core$IFn$_invoke$arity$1(response);
+var tx_48434 = indexed.db.transaction.cljs$core$IFn$_invoke$arity$3(indexed.db.create_database(indexed.db.result(cljs.core.deref(howard.learning_japanese.indexdb.indexdb))),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["words"], null),"readwrite");
+var store_48435 = indexed.db.object_store.cljs$core$IFn$_invoke$arity$2(tx_48434,"words");
+var seq__48372_48436 = cljs.core.seq(data_48433);
+var chunk__48373_48437 = null;
+var count__48374_48438 = (0);
+var i__48375_48439 = (0);
 while(true){
-if((i__48153_48217 < count__48152_48216)){
-var it_48218 = chunk__48151_48215.cljs$core$IIndexed$_nth$arity$2(null,i__48153_48217);
-console.log("insert: ",howard.learning_japanese.indexdb.to_js_obj(it_48218));
+if((i__48375_48439 < count__48374_48438)){
+var it_48440 = chunk__48373_48437.cljs$core$IIndexed$_nth$arity$2(null,i__48375_48439);
+console.log("insert: ",howard.learning_japanese.indexdb.to_js_obj(it_48440));
 
-indexed.db.put.cljs$core$IFn$_invoke$arity$2(store_48213,howard.learning_japanese.indexdb.to_js_obj(it_48218));
+indexed.db.put.cljs$core$IFn$_invoke$arity$2(store_48435,howard.learning_japanese.indexdb.to_js_obj(it_48440));
 
 
-var G__48219 = seq__48150_48214;
-var G__48220 = chunk__48151_48215;
-var G__48221 = count__48152_48216;
-var G__48222 = (i__48153_48217 + (1));
-seq__48150_48214 = G__48219;
-chunk__48151_48215 = G__48220;
-count__48152_48216 = G__48221;
-i__48153_48217 = G__48222;
+var G__48441 = seq__48372_48436;
+var G__48442 = chunk__48373_48437;
+var G__48443 = count__48374_48438;
+var G__48444 = (i__48375_48439 + (1));
+seq__48372_48436 = G__48441;
+chunk__48373_48437 = G__48442;
+count__48374_48438 = G__48443;
+i__48375_48439 = G__48444;
 continue;
 } else {
-var temp__5753__auto___48223 = cljs.core.seq(seq__48150_48214);
-if(temp__5753__auto___48223){
-var seq__48150_48224__$1 = temp__5753__auto___48223;
-if(cljs.core.chunked_seq_QMARK_(seq__48150_48224__$1)){
-var c__5568__auto___48225 = cljs.core.chunk_first(seq__48150_48224__$1);
-var G__48226 = cljs.core.chunk_rest(seq__48150_48224__$1);
-var G__48227 = c__5568__auto___48225;
-var G__48228 = cljs.core.count(c__5568__auto___48225);
-var G__48229 = (0);
-seq__48150_48214 = G__48226;
-chunk__48151_48215 = G__48227;
-count__48152_48216 = G__48228;
-i__48153_48217 = G__48229;
+var temp__5753__auto___48445 = cljs.core.seq(seq__48372_48436);
+if(temp__5753__auto___48445){
+var seq__48372_48446__$1 = temp__5753__auto___48445;
+if(cljs.core.chunked_seq_QMARK_(seq__48372_48446__$1)){
+var c__5568__auto___48447 = cljs.core.chunk_first(seq__48372_48446__$1);
+var G__48448 = cljs.core.chunk_rest(seq__48372_48446__$1);
+var G__48449 = c__5568__auto___48447;
+var G__48450 = cljs.core.count(c__5568__auto___48447);
+var G__48451 = (0);
+seq__48372_48436 = G__48448;
+chunk__48373_48437 = G__48449;
+count__48374_48438 = G__48450;
+i__48375_48439 = G__48451;
 continue;
 } else {
-var it_48230 = cljs.core.first(seq__48150_48224__$1);
-console.log("insert: ",howard.learning_japanese.indexdb.to_js_obj(it_48230));
+var it_48452 = cljs.core.first(seq__48372_48446__$1);
+console.log("insert: ",howard.learning_japanese.indexdb.to_js_obj(it_48452));
 
-indexed.db.put.cljs$core$IFn$_invoke$arity$2(store_48213,howard.learning_japanese.indexdb.to_js_obj(it_48230));
+indexed.db.put.cljs$core$IFn$_invoke$arity$2(store_48435,howard.learning_japanese.indexdb.to_js_obj(it_48452));
 
 
-var G__48231 = cljs.core.next(seq__48150_48224__$1);
-var G__48232 = null;
-var G__48233 = (0);
-var G__48234 = (0);
-seq__48150_48214 = G__48231;
-chunk__48151_48215 = G__48232;
-count__48152_48216 = G__48233;
-i__48153_48217 = G__48234;
+var G__48453 = cljs.core.next(seq__48372_48446__$1);
+var G__48454 = null;
+var G__48455 = (0);
+var G__48456 = (0);
+seq__48372_48436 = G__48453;
+chunk__48373_48437 = G__48454;
+count__48374_48438 = G__48455;
+i__48375_48439 = G__48456;
 continue;
 }
 } else {
@@ -136,129 +136,129 @@ howard.learning_japanese.indexdb.data = cljs.core.atom.cljs$core$IFn$_invoke$ari
 howard.learning_japanese.indexdb.get_words_data = (function howard$learning_japanese$indexdb$get_words_data(){
 var c__36016__auto__ = cljs.core.async.chan.cljs$core$IFn$_invoke$arity$1((1));
 cljs.core.async.impl.dispatch.run((function (){
-var f__36017__auto__ = (function (){var switch__35946__auto__ = (function (state_48191){
-var state_val_48192 = (state_48191[(1)]);
-if((state_val_48192 === (1))){
-var inst_48154 = console.log("inside word data");
-var inst_48155 = [new cljs.core.Keyword(null,"data","data",-232669377),new cljs.core.Keyword(null,"status","status",-1997798413)];
-var inst_48156 = cljs.core.PersistentVector.EMPTY;
-var inst_48157 = cljs.core.transient$(inst_48156);
-var inst_48158 = [inst_48157,new cljs.core.Keyword(null,"none","none",1333468478)];
-var inst_48159 = cljs.core.PersistentHashMap.fromArrays(inst_48155,inst_48158);
-var inst_48160 = cljs.core.reset_BANG_(howard.learning_japanese.indexdb.data,inst_48159);
-var inst_48161 = howard.learning_japanese.indexdb.wait_db_done();
-var inst_48162 = cljs.core.async.interop.p__GT_c(inst_48161);
-var state_48191__$1 = (function (){var statearr_48193 = state_48191;
-(statearr_48193[(7)] = inst_48160);
+var f__36017__auto__ = (function (){var switch__35946__auto__ = (function (state_48413){
+var state_val_48414 = (state_48413[(1)]);
+if((state_val_48414 === (1))){
+var inst_48376 = console.log("inside word data");
+var inst_48377 = [new cljs.core.Keyword(null,"data","data",-232669377),new cljs.core.Keyword(null,"status","status",-1997798413)];
+var inst_48378 = cljs.core.PersistentVector.EMPTY;
+var inst_48379 = cljs.core.transient$(inst_48378);
+var inst_48380 = [inst_48379,new cljs.core.Keyword(null,"none","none",1333468478)];
+var inst_48381 = cljs.core.PersistentHashMap.fromArrays(inst_48377,inst_48380);
+var inst_48382 = cljs.core.reset_BANG_(howard.learning_japanese.indexdb.data,inst_48381);
+var inst_48383 = howard.learning_japanese.indexdb.wait_db_done();
+var inst_48384 = cljs.core.async.interop.p__GT_c(inst_48383);
+var state_48413__$1 = (function (){var statearr_48415 = state_48413;
+(statearr_48415[(7)] = inst_48382);
 
-(statearr_48193[(8)] = inst_48154);
+(statearr_48415[(8)] = inst_48376);
 
-return statearr_48193;
+return statearr_48415;
 })();
-return cljs.core.async.impl.ioc_helpers.take_BANG_(state_48191__$1,(2),inst_48162);
+return cljs.core.async.impl.ioc_helpers.take_BANG_(state_48413__$1,(2),inst_48384);
 } else {
-if((state_val_48192 === (2))){
-var inst_48164 = (state_48191[(9)]);
-var inst_48165 = (state_48191[(10)]);
-var inst_48164__$1 = (state_48191[(2)]);
-var inst_48165__$1 = (inst_48164__$1 instanceof cljs.core.ExceptionInfo);
-var state_48191__$1 = (function (){var statearr_48194 = state_48191;
-(statearr_48194[(9)] = inst_48164__$1);
+if((state_val_48414 === (2))){
+var inst_48387 = (state_48413[(9)]);
+var inst_48386 = (state_48413[(10)]);
+var inst_48386__$1 = (state_48413[(2)]);
+var inst_48387__$1 = (inst_48386__$1 instanceof cljs.core.ExceptionInfo);
+var state_48413__$1 = (function (){var statearr_48416 = state_48413;
+(statearr_48416[(9)] = inst_48387__$1);
 
-(statearr_48194[(10)] = inst_48165__$1);
+(statearr_48416[(10)] = inst_48386__$1);
 
-return statearr_48194;
+return statearr_48416;
 })();
-if(cljs.core.truth_(inst_48165__$1)){
-var statearr_48195_48235 = state_48191__$1;
-(statearr_48195_48235[(1)] = (3));
+if(cljs.core.truth_(inst_48387__$1)){
+var statearr_48417_48457 = state_48413__$1;
+(statearr_48417_48457[(1)] = (3));
 
 } else {
-var statearr_48196_48236 = state_48191__$1;
-(statearr_48196_48236[(1)] = (4));
+var statearr_48418_48458 = state_48413__$1;
+(statearr_48418_48458[(1)] = (4));
 
 }
 
 return new cljs.core.Keyword(null,"recur","recur",-437573268);
 } else {
-if((state_val_48192 === (3))){
-var inst_48164 = (state_48191[(9)]);
-var inst_48167 = cljs.core.ex_data(inst_48164);
-var inst_48168 = new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(inst_48167);
-var inst_48169 = cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(inst_48168,new cljs.core.Keyword(null,"promise-error","promise-error",-90673560));
-var state_48191__$1 = state_48191;
-var statearr_48197_48237 = state_48191__$1;
-(statearr_48197_48237[(2)] = inst_48169);
+if((state_val_48414 === (3))){
+var inst_48386 = (state_48413[(10)]);
+var inst_48389 = cljs.core.ex_data(inst_48386);
+var inst_48390 = new cljs.core.Keyword(null,"error","error",-978969032).cljs$core$IFn$_invoke$arity$1(inst_48389);
+var inst_48391 = cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(inst_48390,new cljs.core.Keyword(null,"promise-error","promise-error",-90673560));
+var state_48413__$1 = state_48413;
+var statearr_48419_48459 = state_48413__$1;
+(statearr_48419_48459[(2)] = inst_48391);
 
-(statearr_48197_48237[(1)] = (5));
-
-
-return new cljs.core.Keyword(null,"recur","recur",-437573268);
-} else {
-if((state_val_48192 === (4))){
-var inst_48165 = (state_48191[(10)]);
-var state_48191__$1 = state_48191;
-var statearr_48198_48238 = state_48191__$1;
-(statearr_48198_48238[(2)] = inst_48165);
-
-(statearr_48198_48238[(1)] = (5));
+(statearr_48419_48459[(1)] = (5));
 
 
 return new cljs.core.Keyword(null,"recur","recur",-437573268);
 } else {
-if((state_val_48192 === (5))){
-var inst_48172 = (state_48191[(2)]);
-var state_48191__$1 = state_48191;
-if(cljs.core.truth_(inst_48172)){
-var statearr_48199_48239 = state_48191__$1;
-(statearr_48199_48239[(1)] = (6));
+if((state_val_48414 === (4))){
+var inst_48387 = (state_48413[(9)]);
+var state_48413__$1 = state_48413;
+var statearr_48420_48460 = state_48413__$1;
+(statearr_48420_48460[(2)] = inst_48387);
+
+(statearr_48420_48460[(1)] = (5));
+
+
+return new cljs.core.Keyword(null,"recur","recur",-437573268);
+} else {
+if((state_val_48414 === (5))){
+var inst_48394 = (state_48413[(2)]);
+var state_48413__$1 = state_48413;
+if(cljs.core.truth_(inst_48394)){
+var statearr_48421_48461 = state_48413__$1;
+(statearr_48421_48461[(1)] = (6));
 
 } else {
-var statearr_48200_48240 = state_48191__$1;
-(statearr_48200_48240[(1)] = (7));
+var statearr_48422_48462 = state_48413__$1;
+(statearr_48422_48462[(1)] = (7));
 
 }
 
 return new cljs.core.Keyword(null,"recur","recur",-437573268);
 } else {
-if((state_val_48192 === (6))){
-var inst_48164 = (state_48191[(9)]);
-var inst_48174 = (function(){throw inst_48164})();
-var state_48191__$1 = state_48191;
-var statearr_48201_48241 = state_48191__$1;
-(statearr_48201_48241[(2)] = inst_48174);
+if((state_val_48414 === (6))){
+var inst_48386 = (state_48413[(10)]);
+var inst_48396 = (function(){throw inst_48386})();
+var state_48413__$1 = state_48413;
+var statearr_48423_48463 = state_48413__$1;
+(statearr_48423_48463[(2)] = inst_48396);
 
-(statearr_48201_48241[(1)] = (8));
-
-
-return new cljs.core.Keyword(null,"recur","recur",-437573268);
-} else {
-if((state_val_48192 === (7))){
-var inst_48164 = (state_48191[(9)]);
-var state_48191__$1 = state_48191;
-var statearr_48202_48242 = state_48191__$1;
-(statearr_48202_48242[(2)] = inst_48164);
-
-(statearr_48202_48242[(1)] = (8));
+(statearr_48423_48463[(1)] = (8));
 
 
 return new cljs.core.Keyword(null,"recur","recur",-437573268);
 } else {
-if((state_val_48192 === (8))){
-var inst_48177 = (state_48191[(2)]);
-var inst_48178 = cljs.core.deref(howard.learning_japanese.indexdb.indexdb);
-var inst_48179 = indexed.db.result(inst_48178);
-var inst_48180 = indexed.db.create_database(inst_48179);
-var inst_48181 = cljs.core.PersistentVector.EMPTY_NODE;
-var inst_48182 = ["words"];
-var inst_48183 = (new cljs.core.PersistentVector(null,1,(5),inst_48181,inst_48182,null));
-var inst_48184 = indexed.db.transaction.cljs$core$IFn$_invoke$arity$3(inst_48180,inst_48183,"readwrite");
-var inst_48185 = indexed.db.object_store.cljs$core$IFn$_invoke$arity$2(inst_48184,"words");
-var inst_48186 = console.log("get data out of indexdb..");
-var inst_48187 = indexed.db.open_cursor.cljs$core$IFn$_invoke$arity$1(inst_48185);
-var inst_48188 = (function (){var _ = inst_48177;
-var trans = inst_48184;
-var store = inst_48185;
+if((state_val_48414 === (7))){
+var inst_48386 = (state_48413[(10)]);
+var state_48413__$1 = state_48413;
+var statearr_48424_48464 = state_48413__$1;
+(statearr_48424_48464[(2)] = inst_48386);
+
+(statearr_48424_48464[(1)] = (8));
+
+
+return new cljs.core.Keyword(null,"recur","recur",-437573268);
+} else {
+if((state_val_48414 === (8))){
+var inst_48399 = (state_48413[(2)]);
+var inst_48400 = cljs.core.deref(howard.learning_japanese.indexdb.indexdb);
+var inst_48401 = indexed.db.result(inst_48400);
+var inst_48402 = indexed.db.create_database(inst_48401);
+var inst_48403 = cljs.core.PersistentVector.EMPTY_NODE;
+var inst_48404 = ["words"];
+var inst_48405 = (new cljs.core.PersistentVector(null,1,(5),inst_48403,inst_48404,null));
+var inst_48406 = indexed.db.transaction.cljs$core$IFn$_invoke$arity$3(inst_48402,inst_48405,"readwrite");
+var inst_48407 = indexed.db.object_store.cljs$core$IFn$_invoke$arity$2(inst_48406,"words");
+var inst_48408 = console.log("get data out of indexdb..");
+var inst_48409 = indexed.db.open_cursor.cljs$core$IFn$_invoke$arity$1(inst_48407);
+var inst_48410 = (function (){var _ = inst_48399;
+var trans = inst_48406;
+var store = inst_48407;
 return (function (e){
 var cursor = indexed.db.result(indexed.db.create_request(e.target));
 if((cursor == null)){
@@ -273,10 +273,10 @@ console.log("inside else",cljs.core.clj__GT_js(cljs.core.deref(howard.learning_j
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(howard.learning_japanese.indexdb.data,cljs.core.assoc,new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"success","success",1890645906),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"data","data",-232669377),p_data], 0));
 }
 } else {
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(howard.learning_japanese.indexdb.data,(function (p__48203){
-var map__48204 = p__48203;
-var map__48204__$1 = cljs.core.__destructure_map(map__48204);
-var data = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__48204__$1,new cljs.core.Keyword(null,"data","data",-232669377));
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(howard.learning_japanese.indexdb.data,(function (p__48425){
+var map__48426 = p__48425;
+var map__48426__$1 = cljs.core.__destructure_map(map__48426);
+var data = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__48426__$1,new cljs.core.Keyword(null,"data","data",-232669377));
 var val = cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$variadic(indexed.db.value(indexed.db.create_cursor_with_value(cursor)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([new cljs.core.Keyword(null,"keywordize-keys","keywordize-keys",1310784252),true], 0));
 return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"loading","loading",-737050189),new cljs.core.Keyword(null,"data","data",-232669377),cljs.core.conj_BANG_.cljs$core$IFn$_invoke$arity$2(data,val)], null);
 }));
@@ -285,13 +285,13 @@ return indexed.db.continue$.cljs$core$IFn$_invoke$arity$1(indexed.db.create_curs
 }
 });
 })();
-var inst_48189 = indexed.db.on.cljs$core$IFn$_invoke$arity$3(inst_48187,"success",inst_48188);
-var state_48191__$1 = (function (){var statearr_48205 = state_48191;
-(statearr_48205[(11)] = inst_48186);
+var inst_48411 = indexed.db.on.cljs$core$IFn$_invoke$arity$3(inst_48409,"success",inst_48410);
+var state_48413__$1 = (function (){var statearr_48427 = state_48413;
+(statearr_48427[(11)] = inst_48408);
 
-return statearr_48205;
+return statearr_48427;
 })();
-return cljs.core.async.impl.ioc_helpers.return_chan(state_48191__$1,inst_48189);
+return cljs.core.async.impl.ioc_helpers.return_chan(state_48413__$1,inst_48411);
 } else {
 return null;
 }
@@ -306,17 +306,17 @@ return null;
 return (function() {
 var howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto__ = null;
 var howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto____0 = (function (){
-var statearr_48206 = [null,null,null,null,null,null,null,null,null,null,null,null];
-(statearr_48206[(0)] = howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto__);
+var statearr_48428 = [null,null,null,null,null,null,null,null,null,null,null,null];
+(statearr_48428[(0)] = howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto__);
 
-(statearr_48206[(1)] = (1));
+(statearr_48428[(1)] = (1));
 
-return statearr_48206;
+return statearr_48428;
 });
-var howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto____1 = (function (state_48191){
+var howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto____1 = (function (state_48413){
 while(true){
 var ret_value__35948__auto__ = (function (){try{while(true){
-var result__35949__auto__ = switch__35946__auto__(state_48191);
+var result__35949__auto__ = switch__35946__auto__(state_48413);
 if(cljs.core.keyword_identical_QMARK_(result__35949__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
 continue;
 } else {
@@ -324,14 +324,14 @@ return result__35949__auto__;
 }
 break;
 }
-}catch (e48207){var ex__35950__auto__ = e48207;
-var statearr_48208_48245 = state_48191;
-(statearr_48208_48245[(2)] = ex__35950__auto__);
+}catch (e48429){var ex__35950__auto__ = e48429;
+var statearr_48430_48467 = state_48413;
+(statearr_48430_48467[(2)] = ex__35950__auto__);
 
 
-if(cljs.core.seq((state_48191[(4)]))){
-var statearr_48209_48246 = state_48191;
-(statearr_48209_48246[(1)] = cljs.core.first((state_48191[(4)])));
+if(cljs.core.seq((state_48413[(4)]))){
+var statearr_48431_48468 = state_48413;
+(statearr_48431_48468[(1)] = cljs.core.first((state_48413[(4)])));
 
 } else {
 throw ex__35950__auto__;
@@ -340,8 +340,8 @@ throw ex__35950__auto__;
 return new cljs.core.Keyword(null,"recur","recur",-437573268);
 }})();
 if(cljs.core.keyword_identical_QMARK_(ret_value__35948__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
-var G__48247 = state_48191;
-state_48191 = G__48247;
+var G__48469 = state_48413;
+state_48413 = G__48469;
 continue;
 } else {
 return ret_value__35948__auto__;
@@ -349,12 +349,12 @@ return ret_value__35948__auto__;
 break;
 }
 });
-howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto__ = function(state_48191){
+howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto__ = function(state_48413){
 switch(arguments.length){
 case 0:
 return howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto____0.call(this);
 case 1:
-return howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto____1.call(this,state_48191);
+return howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto____1.call(this,state_48413);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
@@ -363,10 +363,10 @@ howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto__.c
 return howard$learning_japanese$indexdb$get_words_data_$_state_machine__35947__auto__;
 })()
 })();
-var state__36018__auto__ = (function (){var statearr_48210 = f__36017__auto__();
-(statearr_48210[(6)] = c__36016__auto__);
+var state__36018__auto__ = (function (){var statearr_48432 = f__36017__auto__();
+(statearr_48432[(6)] = c__36016__auto__);
 
-return statearr_48210;
+return statearr_48432;
 })();
 return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped(state__36018__auto__);
 }));
