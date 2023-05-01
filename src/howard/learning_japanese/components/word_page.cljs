@@ -64,17 +64,30 @@
 
      [card-actions
       [button {:on-click (fn []
-                           (re-frame/dispatch [::events/toggle-word-answer]))}
-       [circle-notifications {:font-size "large"}]]
+                           (re-frame/dispatch [::events/toggle-word-answer]))
+               :sx {:mx 1
+                    :min-width 0
+                    :px 0}}
+       [circle-notifications {:font-size "medium"}]]
       [button {:on-click (fn []
-                           (re-frame/dispatch [::events/change-card-mode "hide-chinese"]))}
-       [mode {:font-size "large"}]]
+                           (re-frame/dispatch [::events/change-card-mode "hide-chinese"]))
+               :sx {:mx 1
+                    :min-width 0
+                    :px 0}}
+       [mode {:font-size "medium"}]]
       [button {:on-click (fn []
-                           (re-frame/dispatch [::events/add-check-list-record-by-word word]))}
-       [check {:font-size "large"}]]
+                           (re-frame/dispatch [::events/add-check-list-record-by-word word]))
+               :sx {:mx 1
+                    :min-width 0
+                    :px 0}}
+
+       [check {:font-size "medium"}]]
       [button {:on-click (fn []
-                           (re-frame/dispatch [::events/remove-check-list-record-by-word word]))}
-       [cancel {:font-size "large"}]]
+                           (re-frame/dispatch [::events/remove-check-list-record-by-word word]))
+               :sx {:mx 1
+                    :min-width 0
+                    :px 0}}
+       [cancel {:font-size "medium"}]]
       [box {:sx {:display "flex" :margin-right 0 :margin-left "auto"}}
        (when (> count 0)
          (for [i (range count)]
@@ -102,21 +115,33 @@
         sentence]
        [card-actions
         [button {:on-click (fn []
-                             (re-frame/dispatch [::events/toggle-word-answer]))}
-         [circle-notifications {:font-size "large"}]]
+                             (re-frame/dispatch [::events/toggle-word-answer]))
+                 :sx {:mx 1
+                      :min-width 0
+                      :px 0}}
+         [circle-notifications {:font-size "medium"}]]
         [button {:on-click (fn []
-                             (re-frame/dispatch [::events/change-card-mode "hide-japanese"]))}
-         [mode {:font-size "large"}]]
+                             (re-frame/dispatch [::events/change-card-mode "hide-japanese"]))
+                 :sx {:mx 1
+                      :min-width 0
+                      :px 0}}
+         [mode {:font-size "medium"}]]
         [button {:on-click (fn []
-                             (re-frame/dispatch [::events/add-check-list-record-by-word word]))}
-         [check {:font-size "large"}]]
+                             (re-frame/dispatch [::events/add-check-list-record-by-word word]))
+                 :sx {:mx 1
+                      :min-width 0
+                      :px 0}}
+         [check {:font-size "medium"}]]
         [button {:on-click (fn []
-                             (re-frame/dispatch [::events/remove-check-list-record-by-word word]))}
-         [cancel {:font-size "large"}]]
+                             (re-frame/dispatch [::events/remove-check-list-record-by-word word]))
+                 :sx {:mx 1
+                      :min-width 0
+                      :px 0}}
+         [cancel {:font-size "medium"}]]
         [box {:sx {:display "flex" :margin-right 0 :margin-left "auto"}}
          (when (> count 0)
            (for [i (range count)]
-             [check {:key (str word "-" i) :sx {:color "green"} :font-size "large" :color "green"}]))]]])))
+             [check {:key (str word "-" i) :sx {:color "green"} :font-size "medium" :color "green"}]))]]])))
 
 (defn word-page
   "the word page"
