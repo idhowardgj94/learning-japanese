@@ -5,7 +5,7 @@
    [re-frame.core :as re-frame]))
 
 (re-frame/reg-event-db
- ::set-app-status
+ :app/set-app-status
  (fn-traced
   [db [_ status]]
   (assoc db :app/status status)))
@@ -20,7 +20,6 @@
  ::set-word-data
  (fn-traced
   [db [_ data]]
-  (.log js/console (clj->js data))
   (assoc db :word/card-data data)))
 
 (re-frame/reg-event-db
@@ -66,4 +65,29 @@
   [db _]
   (assoc db :layout/toggle-drawler (not (:layout/toggle-drawler db)))))
 
+(re-frame/reg-event-fx
+ ::get-check-list
+ (fn-traced
+  [_ [_ word]]
+  {:fx [[:indexdb/get-check-list word]]}))
+
+(re-frame/reg-event-db
+ :indexdb/set-word-record
+ (fn-traced
+  [db [_ word-record]]
+  (assoc db :word/current-word-record word-record)))
+
+(re-frame/reg-event-fx
+ ::add-check-list-record-by-word
+ (fn-traced
+  [{:keys [db]} [_ word]]
+  {:fx [[:update-check-list-record {:word word :count 1}]
+        [:indexdb/get-check-list word]]}))
+
+(re-frame/reg-event-fx
+ ::remove-check-list-record-by-word
+ (fn-traced
+  [{:keys [db]} [_ word]]
+  {:fx [[:update-check-list-record {:word word :count -1}]
+        [:indexdb/get-check-list word]]}))
 #_((re-frame/dispatch [::toggle-word-answer]))

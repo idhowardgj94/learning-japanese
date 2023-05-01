@@ -1,6 +1,8 @@
 (ns howard.learning-japanese.core
   (:require
    [cljss.core :as css]
+   [cljs.core.async :refer [go]]
+   [cljs.core.async.interop :refer [<p!]]
    [howard.learning-japanese.api :as api]
    [howard.learning-japanese.events :as events]
    [howard.learning-japanese.route :refer [routes]]
@@ -26,7 +28,6 @@
    (rf/router routes {:data {:coercion rss/coercion}})
    (fn [m]
      (js/console.log "inside route handler")
-     (js/console.log (clj->js m))
      (re-frame/dispatch [::events/navigate m]))
    {:use-fragment true}))
 
@@ -38,16 +39,16 @@
    {:html {:height "100%"}
     :body {:height "100%"}
     :#root {:height "100%"}})
+
   (re-frame/clear-subscription-cache!)
-  (re-frame/dispatch-sync [::events/initialise-db])
-  (re-frame/dispatch [::api/load-data])
-  (setup-memory-db)
   (init-route)
+  (api/setup-api)
   (rdom/render [app]
                (.getElementById js/document "root")))
 
 (defn init
   "initialise cljs re-frame project"
   []
-  (js/console.log "hello, world")
+  (re-frame/dispatch-sync [::events/initialise-db])
+  (setup-memory-db)
   (mount-root))

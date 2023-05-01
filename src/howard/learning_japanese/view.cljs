@@ -20,6 +20,7 @@
             toolbar
             typography]]
    [reagent-mui.icons.menu :refer [menu]]
+   [howard.learning-japanese.api :as api]
    [reitit.frontend.easy :as rfe]))
 
 (re-frame/reg-sub
@@ -57,7 +58,14 @@
     [list-item {:disablePadding true}
      [list-item-button {:sx {:text-align "center"}
                         :href (rfe/href :word)}
-      [list-item-text {:primary "Content"}]]]]])
+      [list-item-text {:primary "Content"}]]]
+    [list-item {:disablePadding true}
+     [list-item-button {:sx {:text-align "center"}
+                        :href (rfe/href :word-list-page)
+                        :on-click (fn []
+                                    ;; excute on next tick to solve drawer didn't toggle issue
+                                    (js/setTimeout #(re-frame/dispatch [::api/reload-indexdb]) 0))}
+      [list-item-text {:primary "Refresh Data"}]]]]])
 
 (defn app
   "the root of the app"
@@ -82,6 +90,8 @@
                       :variant "h5"} "Japanese Learning"]
          [box {:sx {:display {:xs "none"
                               :md "flex"}}}
+          [button {:sx {:color "white"}
+                   :on-click #(re-frame/dispatch [::api/reload-indexdb])} "Refresh"]
           [button {:sx {:color "white"}
                    :href (rfe/href :word-list-page)} "Words"]
           [button {:sx  {:color "white"}
