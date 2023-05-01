@@ -95,12 +95,12 @@ return next_index;
 return current_index;
 }
 } else {
-var G__34634 = (current_index + row_or_direction__$1);
-var G__34635 = current_index;
-var G__34636 = (tries + (1));
-current_index = G__34634;
-previous_index = G__34635;
-tries = G__34636;
+var G__34631 = (current_index + row_or_direction__$1);
+var G__34632 = current_index;
+var G__34633 = (tries + (1));
+current_index = G__34631;
+previous_index = G__34632;
+tries = G__34633;
 continue;
 }
 
@@ -182,16 +182,16 @@ return maybe_index;
 if(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(maybe_index,new cljs.core.Keyword(null,"before-beginning","before-beginning",485705715))) || (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(maybe_index,new cljs.core.Keyword(null,"beyond-end","beyond-end",487000285))))){
 return maybe_index;
 } else {
-var G__34668 = (function (){var G__34550 = row_vec_index;
+var G__34646 = (function (){var G__34550 = row_vec_index;
 var G__34551 = ((zprint.range.abs((row_vec_index - previous_index)) / (2)) | (0));
 var fexpr__34549 = ((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(maybe_index,new cljs.core.Keyword(null,"before","before",-1633692388)))?cljs.core._:cljs.core._PLUS_);
 return (fexpr__34549.cljs$core$IFn$_invoke$arity$2 ? fexpr__34549.cljs$core$IFn$_invoke$arity$2(G__34550,G__34551) : fexpr__34549.call(null,G__34550,G__34551));
 })();
-var G__34669 = row_vec_index;
-var G__34670 = (tries + (1));
-row_vec_index = G__34668;
-previous_index = G__34669;
-tries = G__34670;
+var G__34647 = row_vec_index;
+var G__34648 = (tries + (1));
+row_vec_index = G__34646;
+previous_index = G__34647;
+tries = G__34648;
 continue;
 
 }
@@ -220,8 +220,8 @@ var line = cljs.core.nth.cljs$core$IFn$_invoke$arity$2(line_vec,idx);
 if((((!(cljs.core.empty_QMARK_(clojure.string.trim(line))))) || ((idx >= max_idx)))){
 return idx;
 } else {
-var G__34689 = (idx + (1));
-idx = G__34689;
+var G__34669 = (idx + (1));
+idx = G__34669;
 continue;
 }
 break;
@@ -242,8 +242,8 @@ return idx;
 if((idx === (0))){
 return (-1);
 } else {
-var G__34692 = (idx - (1));
-idx = G__34692;
+var G__34671 = (idx - (1));
+idx = G__34671;
 continue;
 
 }
